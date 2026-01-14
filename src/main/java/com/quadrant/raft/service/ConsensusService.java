@@ -37,7 +37,6 @@ public class ConsensusService {
 
     private void startElection() {
         log.info("Starting election for term {}", raftNode.getCurrentTerm() + 1);
-        log.info("testing", raftNode.getCurrentTerm() + 1);
         raftNode.setState(RaftState.CANDIDATE);
         raftNode.setCurrentTerm(raftNode.getCurrentTerm() + 1);
         raftNode.setVotedFor(nodeConfig.getNodeId());
